@@ -29,17 +29,37 @@ export default function SiteHeader({ current }: { current: Page }) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
+  // Secret double-tap listener for mobile/touch on status dot
+  const lastTapRef = React.useRef(0);
+  const handleSecretTap = (e: React.SyntheticEvent) => {
+    const now = Date.now();
+    if (now - lastTapRef.current < 450) {
+      e.preventDefault();
+      setConsoleOpen((prev) => !prev);
+      lastTapRef.current = 0;
+    } else {
+      lastTapRef.current = now;
+    }
+  };
+
   return (
     <>
       <header className="mx-auto flex w-full max-w-5xl items-center justify-between gap-2 px-4 sm:px-6 pt-6 sm:pt-9 relative z-40">
         <div className="flex items-center gap-2 sm:gap-4">
-          <Link
-            href="/"
-            className="text-xs sm:text-sm font-medium tracking-tight text-fg transition-opacity hover:opacity-70 flex items-center gap-1.5 sm:gap-2"
-          >
-            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 inline-block animate-pulse" />
-            <span>{site.name}</span>
-          </Link>
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <span
+              onClick={handleSecretTap}
+              onTouchEnd={handleSecretTap}
+              title=""
+              className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 inline-block animate-pulse cursor-pointer select-none"
+            />
+            <Link
+              href="/"
+              className="text-xs sm:text-sm font-medium tracking-tight text-fg transition-opacity hover:opacity-70"
+            >
+              <span>{site.name}</span>
+            </Link>
+          </div>
           <span className="hidden items-center gap-2 font-mono text-xs text-subtle sm:inline-flex">
             <span aria-hidden="true" className="h-3 w-px bg-line-strong" />
             {site.city} <LocalTime />

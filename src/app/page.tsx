@@ -183,7 +183,7 @@ export default function Home() {
             {/* Bento Kart 8: Beceriler & Araçlar (Geniş 3 Sütunlu) */}
             <div className="lg:col-span-12 min-w-0 bento-card p-6 sm:p-8 border-emerald-500/15 hover:border-emerald-400/30 shadow-[inset_0_0_40px_-15px_rgba(16,185,129,0.12),0_0_20px_-10px_rgba(16,185,129,0.06)] hover:shadow-[inset_0_0_50px_-10px_rgba(16,185,129,0.18),0_0_25px_-8px_rgba(16,185,129,0.12)] transition-all">
               <div className="flex items-center justify-between text-xs font-mono text-subtle mb-6">
-                <span>02 · YETENEKLER & ARAÇLAR</span>
+                <span>YETENEKLER & ARAÇLAR</span>
                 <span className="text-emerald-400">AKTİF KULLANIM</span>
               </div>
 

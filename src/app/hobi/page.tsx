@@ -93,9 +93,9 @@ export default function Hobby() {
             <div className="text-xs font-mono text-subtle uppercase">
               01 · ÇALIŞMA ALANLARIM
             </div>
-            <h3 className="text-xl font-semibold text-white">
+            <h2 className="text-xl font-semibold text-white">
               Script Geliştirme & Yönetim
-            </h3>
+            </h2>
             <p className="text-sm text-muted leading-relaxed">
               Oyun içi mekanikler, ekonomi dengeleri ve sunucu tarafı optimizasyonlarında aktif olarak Lua scriptleri kodluyor ve topluluğun yönetim süreçlerini yürütüyorum.
             </p>
@@ -113,9 +113,9 @@ export default function Hobby() {
             <div className="text-xs font-mono text-subtle uppercase">
               02 · KULLANDIĞIM ARAÇLAR
             </div>
-            <h3 className="text-xl font-semibold text-white">
+            <h2 className="text-xl font-semibold text-white">
               Teknoloji Yığını
-            </h3>
+            </h2>
             <p className="text-sm text-muted leading-relaxed">
               FiveM ekosisteminde oyun içi scriptler ve modern NUI arayüzleri geliştirirken kullandığım araçlar:
             </p>
