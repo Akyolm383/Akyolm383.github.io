@@ -87,7 +87,7 @@ export const site: SiteData = {
       },
     ],
     hobbyTeaser:
-      "Arkadaşlarımla birlikte geliştirdiğimiz Ducks Community adlı FiveM roleplay sunucusunda hem script yazıyorum hem de yönetimdeyim.",
+      "Arkadaşlarımla birlikte geliştirdiğimiz Ducks Community adlı FiveM roleplay sunucusunda 3 kişilik çekirdek geliştirici ekibi ve 10 kişilik komite ile birlikte hem script yazıyorum hem de yönetimdeyim.",
   },
 
   hobby: {
@@ -98,9 +98,9 @@ export const site: SiteData = {
       url: "https://duckscommunity.com/",
       urlLabel: "duckscommunity.com",
       summary:
-        "Los Santos’ta geçen, whitelist ile çalışan bir hard roleplay sunucusu. Kalıcı karakterler ve sonuçları olan kararlar üzerine kurulu.",
-      role: "Proje üç kişilik bir ekiple yürüyor; ortaya çıkan iş hepimizin.",
-      roles: ["Script geliştirme", "Yönetim"],
+        "Los Santos’ta geçen, whitelist ile çalışan bir hard roleplay sunucusu. Kalıcı karakterler ve sonuçları olan kararlar üzerine kurulu. 3 kişilik çekirdek geliştirici ekibi ve 10 kişilik komite ekibiyle sunucunun scriptlerini, yönetimini ve topluluk operasyonunu birlikte yürütüyoruz.",
+      role: "3 kişilik çekirdek geliştirici ekibi ve 10 kişilik komite; ortaya çıkan iş hepimizin.",
+      roles: ["Script geliştirme", "Yönetim", "Komite & Operasyon"],
     },
     tools: ["Lua", "FiveM", "QBCore", "HTML", "CSS", "JavaScript", "Git"],
   },

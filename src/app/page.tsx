@@ -71,7 +71,7 @@ export default function Home() {
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-purple-950/60 border border-purple-800/50 text-purple-300">
                     <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
-                    <span>Aktif Ekip Projesi (3 Kişi)</span>
+                    <span>3 Kişilik Çekirdek Ekip · 10 Kişilik Komite</span>
                   </span>
 
                   <span className="inline-flex items-center gap-1.5 text-xs font-mono text-zinc-400">
@@ -90,7 +90,7 @@ export default function Home() {
                 </div>
 
                 <p className="text-sm text-muted leading-relaxed max-w-2xl">
-                  {community.summary} 3 kişilik çekirdek geliştirici ekibi olarak sunucunun scriptlerini ve yönetimini birlikte yürütüyoruz.
+                  {community.summary}
                 </p>
               </div>
 

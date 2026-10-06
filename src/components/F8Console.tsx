@@ -78,7 +78,7 @@ export default function F8Console({ isOpen, onClose }: F8ConsoleProps) {
     } else if (cmd === "ducks") {
       newLogs.push({
         type: "success",
-        text: `Ducks Community: ${site.hobby.community.motto.plain} ${site.hobby.community.motto.accent}\nRol: 3 kişilik geliştirici ekibi (Scripting & Yönetim)\nWeb: ${site.hobby.community.url}`,
+        text: `Ducks Community: ${site.hobby.community.motto.plain} ${site.hobby.community.motto.accent}\nRol: 3 kişilik çekirdek geliştirici ekibi & 10 kişilik komite (Scripting & Yönetim)\nWeb: ${site.hobby.community.url}`,
       });
     } else if (cmd === "skills") {
       newLogs.push({
