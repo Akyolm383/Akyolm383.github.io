@@ -138,8 +138,8 @@ export default function DiscordCard() {
       </div>
 
       <div className="mt-5 pt-4 border-t border-line flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-subtle">
-        <span>Sunucu: Ducks Community</span>
-        <span className="text-purple-300">Geliştirici</span>
+        <span>LANYARD SOCKET</span>
+        <span className="text-[#5865F2] font-medium">{isOnline ? "Canlı Senkronize" : "Bağlantı Hazır"}</span>
       </div>
     </div>
   );
