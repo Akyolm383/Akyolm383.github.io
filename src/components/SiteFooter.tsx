@@ -4,7 +4,7 @@ import ExternalLink from "@/components/ExternalLink";
 /** Sayfa sonu: büyük iletişim çağrısı + alt bilgi. */
 export default function SiteFooter() {
   return (
-    <footer className="mx-auto mt-auto w-full max-w-5xl px-6 pb-10 pt-28">
+    <footer className="mx-auto mt-auto w-full max-w-5xl px-4 sm:px-6 pb-10 pt-28">
       <div className="rise border-t border-line pt-14">
         <p className="text-sm text-subtle">Bir sorun, bir fikrin ya da bir teklifin mi var?</p>
         <a

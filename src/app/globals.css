@@ -5,13 +5,14 @@
  * Kontrast (#09090b zemin üzerinde): fg ~17:1, muted ~8:1, subtle ~5.3:1 — hepsi WCAG AA.
  */
 @theme {
-  --color-bg: #09090b;
-  --color-surface: #111113;
-  --color-line: #1d1d20;
-  --color-line-strong: #2e2e33;
+  --color-bg: #08090b;
+  --color-surface: #101114;
+  --color-surface-hover: #16181d;
+  --color-line: #1c1d22;
+  --color-line-strong: #2a2c33;
   --color-fg: #ededed;
   --color-muted: #a3a3a3;
-  --color-subtle: #858585;
+  --color-subtle: #737373;
 
   /* Kod kartı sözdizimi renkleri — sadece orada kullanılır. */
   --color-code-key: #e4e4e7;
@@ -28,43 +29,46 @@
 html {
   background: var(--color-bg);
   color-scheme: dark;
+  overflow-x: hidden;
 }
 
 body {
   position: relative;
   text-rendering: optimizeLegibility;
-  /* Üstten çok hafif bir ışık; sayfaya derinlik verir. */
-  background-image: radial-gradient(
-    ellipse 80% 50% at 50% -10%,
-    rgb(255 255 255 / 0.06),
-    transparent 70%
-  );
-  background-repeat: no-repeat;
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+  /* Derinlikli siber ızgara arka planı */
+  background-image: 
+    linear-gradient(to right, rgb(255 255 255 / 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.02) 1px, transparent 1px),
+    radial-gradient(ellipse 70% 40% at 50% 0%, rgb(255 255 255 / 0.06), transparent 75%);
+  background-size: 32px 32px, 32px 32px, 100% 100%;
+  background-repeat: repeat, repeat, no-repeat;
 }
 
-/* Film greni dokusu. Tıklamaları engellemez. */
+/* Film greni dokusu */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 60;
   pointer-events: none;
-  opacity: 0.04;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* İmleci takip eden ışık (Spotlight bileşeni --mx/--my'yi günceller). */
+/* İmleci takip eden ışık */
 .spotlight {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.6s ease;
+  transition: opacity 0.5s ease;
   background: radial-gradient(
-    600px circle at var(--mx, 50%) var(--my, 30%),
+    650px circle at var(--mx, 50%) var(--my, 30%),
     rgb(255 255 255 / 0.045),
-    transparent 60%
+    transparent 65%
   );
 }
 
@@ -80,10 +84,27 @@ body::after {
 :focus-visible {
   outline: 2px solid var(--color-fg);
   outline-offset: 3px;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
-/* Alt çizgili metin linki — tek tip. */
+/* Bento kartları için ortak interaktif stil */
+.bento-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  border: 1px solid var(--color-line);
+  background-color: var(--color-surface);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card:hover {
+  border-color: var(--color-line-strong);
+  background-color: var(--color-surface-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px -15px rgb(0 0 0 / 0.6);
+}
+
+/* Alt çizgili metin linki */
 .link {
   color: var(--color-fg);
   text-decoration: underline;
@@ -96,14 +117,11 @@ body::after {
   text-decoration-color: var(--color-fg);
 }
 
-/*
- * Giriş animasyonu saf CSS: JS yüklenmese de içerik görünür.
- * Gecikme için elemana style={{ "--d": "80ms" }} verilir.
- */
+/* Giriş animasyonu */
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(10px);
     filter: blur(4px);
   }
   to {
@@ -114,8 +132,33 @@ body::after {
 }
 
 .rise {
-  animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
   animation-delay: var(--d, 0ms);
+}
+
+@keyframes soundwave {
+  0%, 100% {
+    height: 4px;
+  }
+  50% {
+    height: 16px;
+  }
+}
+
+.equalizer-bar {
+  animation: soundwave 1.2s ease-in-out infinite;
+}
+.equalizer-bar:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.equalizer-bar:nth-child(2) {
+  animation-delay: 0.35s;
+}
+.equalizer-bar:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.equalizer-bar:nth-child(4) {
+  animation-delay: 0.2s;
 }
 
 @keyframes blink {
@@ -128,6 +171,22 @@ body::after {
   animation: blink 1.1s steps(1) infinite;
 }
 
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line-strong);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .rise,
   .caret {
@@ -135,5 +194,8 @@ body::after {
   }
   .spotlight {
     display: none;
+  }
+  .bento-card:hover {
+    transform: none;
   }
 }

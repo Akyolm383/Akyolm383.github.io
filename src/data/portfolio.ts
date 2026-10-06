@@ -14,7 +14,10 @@ export interface SiteData {
   url: string;
   email: string;
   linkedin: string;
+  instagram?: string;
   city: string;
+  /** Discord User ID (Lanyard API için) */
+  discordId?: string;
   /** Gerçek bir CV yayınlanınca doldur; boşken CV linki hiçbir yerde görünmez. */
   cvUrl?: string;
   /** GitHub kısmı şimdilik bilinçli olarak gösterilmiyor. */
@@ -53,7 +56,9 @@ export const site: SiteData = {
   url: "https://ramazanakyol.me",
   email: "ramazanakyol161@gmail.com",
   linkedin: "https://www.linkedin.com/in/ramazan-akyol-6b58a3302",
+  instagram: "https://instagram.com/akyolm383",
   city: "İstanbul",
+  discordId: "466247070395924493",
   cvUrl: undefined,
   github: undefined,
 

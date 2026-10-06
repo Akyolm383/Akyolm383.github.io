@@ -47,7 +47,7 @@ export default function IdentityCard() {
   return (
     <figure
       aria-label="Ramazan Akyol hakkında özet, Lua kodu biçiminde"
-      className="relative overflow-hidden rounded-2xl border border-line bg-surface/80 shadow-[0_30px_80px_-20px_rgb(0_0_0/0.8)] backdrop-blur-sm"
+      className="relative w-full max-w-full min-w-0 overflow-hidden rounded-2xl border border-line bg-surface/80 shadow-[0_30px_80px_-20px_rgb(0_0_0/0.8)] backdrop-blur-sm"
     >
       {/* Üst kenarda ince ışık çizgisi */}
       <div
@@ -62,7 +62,7 @@ export default function IdentityCard() {
         </span>
         <span className="ml-2 font-mono text-xs text-subtle">ramazan.lua</span>
       </figcaption>
-      <pre className="overflow-x-auto px-4 py-5 font-mono text-[12.5px] leading-6 text-muted sm:px-5 sm:text-[13px]">
+      <pre className="w-full max-w-full overflow-x-auto px-4 py-5 font-mono text-[12px] leading-6 text-muted sm:px-5 sm:text-[13px]">
         <code>
           {lines.map((line, i) => (
             <span key={i} className="flex">
