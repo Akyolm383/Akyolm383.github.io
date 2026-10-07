@@ -77,53 +77,39 @@ export default function Home() {
         {/* 2. Redesigned Bento Grid Alanı */}
         <div className="rise space-y-5 pb-16" style={{ "--d": "100ms" } as React.CSSProperties}>
           {/* 1. Sıra: İki Ana Sütun (Akademik Kariyer 7 cols + Ducks Community Hobi 5 cols) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 min-w-0">
-            <div className="lg:col-span-7 min-w-0 flex">
-              <div className="w-full min-w-0">
-                <EducationCard />
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 min-w-0 items-stretch">
+            <div className="lg:col-span-7 min-w-0 flex flex-col">
+              <EducationCard />
             </div>
 
-            <div className="lg:col-span-5 min-w-0 flex">
-              <div className="w-full min-w-0">
-                <DucksCommunityCard />
-              </div>
+            <div className="lg:col-span-5 min-w-0 flex flex-col">
+              <DucksCommunityCard />
             </div>
           </div>
 
           {/* 2. Sıra: Canlı Telemetri / Live Pulse (3 x 4 cols) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5 min-w-0">
-            <div className="lg:col-span-4 min-w-0 flex">
-              <div className="w-full min-w-0">
-                <IstanbulCard />
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5 min-w-0 items-stretch">
+            <div className="lg:col-span-4 min-w-0 flex flex-col">
+              <IstanbulCard />
             </div>
 
-            <div className="lg:col-span-4 min-w-0 flex">
-              <div className="w-full min-w-0">
-                <DiscordCard />
-              </div>
+            <div className="lg:col-span-4 min-w-0 flex flex-col">
+              <DiscordCard />
             </div>
 
-            <div className="lg:col-span-4 min-w-0 flex">
-              <div className="w-full min-w-0">
-                <SpotifyCard />
-              </div>
+            <div className="lg:col-span-4 min-w-0 flex flex-col md:col-span-2 lg:col-span-4">
+              <SpotifyCard />
             </div>
           </div>
 
           {/* 3. Sıra: Yetenekler & Araçlar (7 cols) + Dijital Ağ & İletişim (5 cols) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 min-w-0">
-            <div className="lg:col-span-7 min-w-0 flex">
-              <div className="w-full min-w-0">
-                <SkillsCard />
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 min-w-0 items-stretch">
+            <div className="lg:col-span-7 min-w-0 flex flex-col">
+              <SkillsCard />
             </div>
 
-            <div className="lg:col-span-5 min-w-0 flex">
-              <div className="w-full min-w-0">
-                <SocialConnectCard />
-              </div>
+            <div className="lg:col-span-5 min-w-0 flex flex-col">
+              <SocialConnectCard />
             </div>
           </div>
 

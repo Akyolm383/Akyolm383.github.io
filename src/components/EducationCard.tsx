@@ -14,7 +14,7 @@ export default function EducationCard() {
   ];
 
   return (
-    <div className="bento-card min-w-0 p-6 sm:p-8 flex flex-col justify-between group border-line bg-surface/75 hover:bg-surface/95 hover:border-amber-500/40 hover:shadow-[inset_0_0_45px_-10px_rgba(245,158,11,0.18),0_20px_50px_-20px_rgba(245,158,11,0.12)] transition-all duration-300">
+    <div className="bento-card h-full min-w-0 p-6 sm:p-8 flex flex-col justify-between group border-line bg-surface/75 hover:bg-surface/95 hover:border-amber-500/40 hover:shadow-[inset_0_0_45px_-10px_rgba(245,158,11,0.18),0_20px_50px_-20px_rgba(245,158,11,0.12)] transition-all duration-300">
       <div className="space-y-5">
         {/* Üst Rozet Barı */}
         <div className="flex flex-wrap items-center justify-between gap-3">

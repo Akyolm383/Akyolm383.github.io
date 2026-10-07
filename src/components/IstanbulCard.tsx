@@ -159,7 +159,7 @@ export default function IstanbulCard() {
   };
 
   return (
-    <div className="bento-card min-w-0 p-6 sm:p-7 flex flex-col justify-between group border-line bg-surface/75 hover:bg-surface/95 hover:border-cyan-500/40 hover:shadow-[inset_0_0_40px_-10px_rgba(6,182,212,0.18),0_20px_50px_-20px_rgba(6,182,212,0.15)] transition-all duration-300">
+    <div className="bento-card h-full min-w-0 p-6 sm:p-7 flex flex-col justify-between group border-line bg-surface/75 hover:bg-surface/95 hover:border-cyan-500/40 hover:shadow-[inset_0_0_40px_-10px_rgba(6,182,212,0.18),0_20px_50px_-20px_rgba(6,182,212,0.15)] transition-all duration-300">
       <div className="space-y-4">
         {/* Üst Bar */}
         <div className="flex items-center justify-between text-xs font-mono text-subtle">
@@ -226,19 +226,14 @@ export default function IstanbulCard() {
           </span>
         </div>
 
-        <p className="text-xs sm:text-sm text-muted leading-relaxed">
-          Yeni roleplay fikirlerine, FiveM mekaniklerine ve iş birliklerine açık.
+        <p className="text-xs text-muted leading-relaxed">
+          Türkiye finans ve bankacılık sektörünün merkezinde; akademik çalışmalarımı ve projelerimi sürdürüyorum.
         </p>
       </div>
 
-      <div className="mt-6 pt-5 border-t border-line">
-        <Link
-          href="/hobi/"
-          className="inline-flex items-center gap-1.5 text-xs text-fg hover:text-white transition-colors"
-        >
-          <span>Hobi sayfasına göz at</span>
-          <span aria-hidden="true">→</span>
-        </Link>
+      <div className="mt-5 pt-4 border-t border-line flex items-center justify-between text-xs font-mono text-subtle">
+        <span>ZAMAN DİLİMİ</span>
+        <span className="text-cyan-400 font-medium">GMT+3 (TSİ)</span>
       </div>
     </div>
   );

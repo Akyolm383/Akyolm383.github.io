@@ -32,7 +32,7 @@ export default function DiscordCard() {
   const customStatus = data?.activities?.find((a) => a.type === 4);
 
   return (
-    <div className="bento-card min-w-0 p-6 sm:p-7 flex flex-col justify-between group border-line bg-surface/75 hover:bg-surface/95 hover:border-[#5865F2]/45 hover:shadow-[inset_0_0_40px_-10px_rgba(88,101,242,0.2),0_20px_50px_-20px_rgba(88,101,242,0.18)] transition-all duration-300">
+    <div className="bento-card h-full min-w-0 p-6 sm:p-7 flex flex-col justify-between group border-line bg-surface/75 hover:bg-surface/95 hover:border-[#5865F2]/45 hover:shadow-[inset_0_0_40px_-10px_rgba(88,101,242,0.2),0_20px_50px_-20px_rgba(88,101,242,0.18)] transition-all duration-300">
       <div className="space-y-4">
         {/* Üst Başlık */}
         <div className="flex items-center justify-between text-xs font-mono text-subtle">
