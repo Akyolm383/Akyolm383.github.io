@@ -115,6 +115,29 @@ export default function SpotifyCard() {
               </div>
             </div>
 
+            {/* Canlı Frekans Spektrumu (Müzik Çalarken Canlı Dans Eden Dalgalar) */}
+            <div className="rounded-xl bg-surface/60 border border-line p-2.5 space-y-1.5">
+              <div className="flex items-center justify-between text-[10px] font-mono text-subtle">
+                <span className="uppercase tracking-wider text-[#1DB954] font-medium flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1DB954] animate-pulse" />
+                  Canlı Ses Spektrumu
+                </span>
+                <span className="text-zinc-400">320 kbps HQ</span>
+              </div>
+              <div className="h-6 flex items-end justify-between gap-[3px] px-1">
+                {[14, 22, 10, 24, 18, 26, 12, 28, 16, 22, 14, 26, 18, 10, 24, 16, 20, 12, 24, 18].map((maxH, i) => (
+                  <span
+                    key={i}
+                    className="w-[3px] bg-[#1DB954] rounded-full spectrum-bar"
+                    style={{
+                      animationDelay: `${((i * 7) % 11) * 0.1}s`,
+                      animationDuration: `${0.8 + ((i * 3) % 5) * 0.15}s`,
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+
             {/* Albüm Bilgisi Rozeti */}
             <div className="flex flex-wrap items-center gap-1.5 pt-0.5 text-[11px] font-mono">
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface border border-line text-zinc-300 max-w-full truncate">
@@ -146,29 +169,28 @@ export default function SpotifyCard() {
               </div>
             </div>
 
-            {/* Minimalist Ses Spektrumu & Senkronizasyon */}
+            {/* Bekleme Modu / Sinyal Yok Flatline (Sessizken Spektrum Beklemede) */}
             <div className="space-y-2 rounded-xl bg-surface/50 border border-line p-3">
               <div className="flex items-center justify-between text-[11px] font-mono text-subtle">
-                <span className="uppercase tracking-wider">Ses Spektrumu</span>
-                <span className="text-[#1DB954]/80 flex items-center gap-1.5 text-[10px]">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1DB954]/70" />
-                  Hazır
+                <span className="uppercase tracking-wider">Ses Çıkışı &amp; Sinyal</span>
+                <span className="text-zinc-500 flex items-center gap-1.5 text-[10px]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-zinc-600" />
+                  0 Hz · Sessiz
                 </span>
               </div>
 
-              {/* Minimalist Frekans Dalgası */}
+              {/* Düz Noktalar / Flatline (Sessizlik Göstergesi) */}
               <div className="h-6 flex items-center justify-between gap-[3px] px-1">
-                {[10, 16, 8, 20, 14, 22, 16, 24, 18, 10, 22, 14, 8, 20, 12, 16, 10, 22, 12, 16].map((h, i) => (
+                {Array.from({ length: 20 }).map((_, i) => (
                   <span
                     key={i}
-                    className="w-[3px] bg-emerald-500/25 rounded-full transition-all group-hover:bg-[#1DB954]/60"
-                    style={{ height: `${h}px` }}
+                    className="w-[3px] h-[3px] bg-zinc-700/60 rounded-full"
                   />
                 ))}
               </div>
 
               <p className="text-[11px] text-subtle leading-tight font-mono">
-                Spotify başladığında anlık senkronize olur.
+                Müzik başladığında spektrum canlanır ve senkronize olur.
               </p>
             </div>
 
