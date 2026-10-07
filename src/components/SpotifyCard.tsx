@@ -146,22 +146,30 @@ export default function SpotifyCard() {
               </div>
             </div>
 
-            {/* Müzik Zevki & Vibe Rozetleri */}
-            <div className="space-y-1.5">
-              <span className="text-[10px] font-mono uppercase tracking-wider text-subtle block">
-                Müzik Zevki &amp; Vibe
-              </span>
-              <div className="flex flex-wrap gap-1.5 text-xs">
-                <span className="px-2.5 py-1 rounded-lg bg-surface border border-line text-zinc-300 font-medium">
-                  Türkçe Rap
-                </span>
-                <span className="px-2.5 py-1 rounded-lg bg-surface border border-line text-zinc-300 font-medium">
-                  Lo-Fi / Focus
-                </span>
-                <span className="px-2.5 py-1 rounded-lg bg-surface border border-line text-zinc-400">
-                  Retro &amp; Nostalji
+            {/* Minimalist Ses Spektrumu & Senkronizasyon */}
+            <div className="space-y-2 rounded-xl bg-surface/50 border border-line p-3">
+              <div className="flex items-center justify-between text-[11px] font-mono text-subtle">
+                <span className="uppercase tracking-wider">Ses Spektrumu</span>
+                <span className="text-[#1DB954]/80 flex items-center gap-1.5 text-[10px]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#1DB954]/70" />
+                  Hazır
                 </span>
               </div>
+
+              {/* Minimalist Frekans Dalgası */}
+              <div className="h-6 flex items-center justify-between gap-[3px] px-1">
+                {[10, 16, 8, 20, 14, 22, 16, 24, 18, 10, 22, 14, 8, 20, 12, 16, 10, 22, 12, 16].map((h, i) => (
+                  <span
+                    key={i}
+                    className="w-[3px] bg-emerald-500/25 rounded-full transition-all group-hover:bg-[#1DB954]/60"
+                    style={{ height: `${h}px` }}
+                  />
+                ))}
+              </div>
+
+              <p className="text-[11px] text-subtle leading-tight font-mono">
+                Spotify başladığında anlık senkronize olur.
+              </p>
             </div>
 
             {/* Canlı Telemetri Rozeti */}
