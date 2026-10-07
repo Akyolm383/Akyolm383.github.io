@@ -66,7 +66,7 @@ export default function SiteHeader({ current }: { current: Page }) {
           </span>
         </div>
 
-        <nav aria-label="Ana menü" className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm">
+        <nav aria-label="Ana menü" className="flex items-center gap-0.5 sm:gap-2 text-xs sm:text-sm shrink-0">
           {links.map((l) => {
             const active = l.page === current;
             return (
@@ -74,7 +74,7 @@ export default function SiteHeader({ current }: { current: Page }) {
                 key={l.href}
                 href={l.href}
                 aria-current={active ? "page" : undefined}
-                className={`rounded-full px-2.5 sm:px-3 py-1 sm:py-1.5 transition-colors ${
+                className={`rounded-full px-2 sm:px-3 py-1 sm:py-1.5 transition-colors ${
                   active ? "bg-white/[0.08] text-fg font-medium" : "text-subtle hover:text-fg"
                 }`}
               >
@@ -85,7 +85,7 @@ export default function SiteHeader({ current }: { current: Page }) {
 
           <a
             href={`mailto:${site.email}`}
-            className="rounded-full px-2.5 sm:px-3 py-1 sm:py-1.5 text-subtle transition-colors hover:text-fg"
+            className="rounded-full px-2 sm:px-3 py-1 sm:py-1.5 text-subtle transition-colors hover:text-fg"
           >
             İletişim
           </a>

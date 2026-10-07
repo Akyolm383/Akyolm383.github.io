@@ -13,9 +13,9 @@ const indent = (n = 1): Tok => ({ t: "  ".repeat(n) });
 
 function buildLines(): Line[] {
   const { education } = site.home;
-  const hobbies = ["FiveM", "Lua", "Ducks Community"];
   return [
     [{ t: "local", c: "kw" }, { t: " ramazan = {" }],
+    [indent(), { t: "odak", c: "key" }, { t: " = " }, str("Finans & Bankacılık"), { t: "," }],
     [indent(), { t: "okul", c: "key" }, { t: " = " }, str(education.schoolShort), { t: "," }],
     [indent(), { t: "bolum", c: "key" }, { t: " = " }, str(education.program), { t: "," }],
     [indent(), { t: "sinif", c: "key" }, { t: " = " }, { t: String(education.year), c: "num" }, { t: "," }],
@@ -24,12 +24,14 @@ function buildLines(): Line[] {
       indent(),
       { t: "hobi", c: "key" },
       { t: " = { " },
-      ...hobbies.flatMap((h, i) => (i ? [{ t: ", " }, str(h)] : [str(h)])),
+      str("FiveM Scripting"),
+      { t: ", " },
+      str("Ducks Community"),
       { t: " }," },
     ],
     [{ t: "}" }],
     [],
-    [{ t: "-- iki dünya, tek kişi", c: "dim" }],
+    [{ t: "-- finansı okuyorum, kodu hobi olarak yazıyorum", c: "dim" }],
     [{ t: "return", c: "kw" }, { t: " ramazan" }],
   ];
 }

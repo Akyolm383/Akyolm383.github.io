@@ -40,7 +40,7 @@ export default function SpotifyCard() {
   const totalMs = spotify ? Math.max(1, spotify.timestamps.end - spotify.timestamps.start) : 0;
 
   return (
-    <div className="bento-card min-w-0 p-6 sm:p-7 flex flex-col justify-between group border-[#1DB954]/30 hover:border-[#1DB954]/50 shadow-[inset_0_0_35px_-10px_rgba(29,185,84,0.22),0_0_20px_-10px_rgba(29,185,84,0.15)] hover:shadow-[inset_0_0_45px_-8px_rgba(29,185,84,0.3),0_0_25px_-8px_rgba(29,185,84,0.25)] transition-all">
+    <div className="bento-card min-w-0 p-6 sm:p-7 flex flex-col justify-between group border-line bg-surface/75 hover:bg-surface/95 hover:border-[#1DB954]/45 hover:shadow-[inset_0_0_40px_-10px_rgba(29,185,84,0.2),0_20px_50px_-20px_rgba(29,185,84,0.18)] transition-all duration-300">
       <div className="space-y-4">
         {/* Üst Başlık & Equalizer */}
         <div className="flex items-center justify-between text-xs font-mono text-subtle">
