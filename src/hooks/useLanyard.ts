@@ -44,6 +44,9 @@ export interface LanyardData {
   activities: LanyardActivity[];
   listening_to_spotify: boolean;
   spotify: LanyardSpotify | null;
+  active_on_discord_desktop?: boolean;
+  active_on_discord_mobile?: boolean;
+  active_on_discord_web?: boolean;
 }
 
 export function useLanyard(userId: string | undefined) {

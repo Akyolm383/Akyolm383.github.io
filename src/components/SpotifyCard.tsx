@@ -80,10 +80,10 @@ export default function SpotifyCard() {
           </div>
         </div>
 
-        {/* Albüm Kapağı & Şarkı Bilgisi */}
+        {/* Albüm Kapağı & Şarkı Bilgisi veya Dinlenme Durumu */}
         {spotify ? (
-          <>
-            <div className="flex items-center gap-3.5 pt-1">
+          <div className="space-y-3 pt-1">
+            <div className="flex items-center gap-3.5">
               <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-zinc-900 flex-shrink-0 border border-line shadow-lg group-hover:scale-105 transition-transform">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -102,7 +102,7 @@ export default function SpotifyCard() {
             </div>
 
             {/* İlerleme Çubuğu */}
-            <div className="space-y-1 pt-1">
+            <div className="space-y-1 pt-0.5">
               <div className="w-full h-1 bg-white/[0.06] rounded-full overflow-hidden">
                 <div
                   className="h-full bg-[#1DB954] rounded-full transition-all duration-300"
@@ -114,30 +114,62 @@ export default function SpotifyCard() {
                 <span>{formatMs(totalMs)}</span>
               </div>
             </div>
-          </>
+
+            {/* Albüm Bilgisi Rozeti */}
+            <div className="flex flex-wrap items-center gap-1.5 pt-0.5 text-[11px] font-mono">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface border border-line text-zinc-300 max-w-full truncate">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#1DB954] animate-pulse shrink-0" />
+                <span className="truncate">{spotify.album || "Canlı Akış"}</span>
+              </span>
+            </div>
+          </div>
         ) : (
-          <div className="py-2.5 space-y-2">
-            <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-xl bg-surface border border-line flex items-center justify-center text-zinc-600">
+          <div className="space-y-3 pt-1">
+            {/* Oynatıcı Durum Kutusu */}
+            <div className="rounded-xl bg-surface/90 border border-line p-3 flex items-center gap-3">
+              <div className="w-9 h-9 rounded-lg bg-surface border border-line flex items-center justify-center text-zinc-500 shrink-0">
                 <svg
-                  className="w-5 h-5 text-zinc-500"
+                  className="w-4 h-4 text-zinc-400"
                   viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  fill="currentColor"
                 >
-                  <circle cx="12" cy="12" r="10" />
-                  <polygon points="10 8 16 12 10 16 10 8" />
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
                 </svg>
               </div>
               <div className="min-w-0 flex-1">
-                <p className="text-sm font-medium text-zinc-300">
-                  {loading ? "Bağlanıyor..." : "Şu an müzik dinlemiyor"}
+                <p className="text-xs font-medium text-zinc-300 truncate">
+                  {loading ? "Bağlanıyor..." : "Şu an müzik çalmıyor"}
                 </p>
-                <p className="text-xs text-subtle">Spotify kapalı veya duraklatıldı</p>
+                <p className="text-[11px] text-subtle truncate">
+                  Spotify kapalı veya duraklatıldı
+                </p>
               </div>
+            </div>
+
+            {/* Müzik Zevki & Vibe Rozetleri */}
+            <div className="space-y-1.5">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-subtle block">
+                Müzik Zevki &amp; Vibe
+              </span>
+              <div className="flex flex-wrap gap-1.5 text-xs">
+                <span className="px-2.5 py-1 rounded-lg bg-surface border border-line text-zinc-300 font-medium">
+                  Türkçe Rap
+                </span>
+                <span className="px-2.5 py-1 rounded-lg bg-surface border border-line text-zinc-300 font-medium">
+                  Lo-Fi / Focus
+                </span>
+                <span className="px-2.5 py-1 rounded-lg bg-surface border border-line text-zinc-400">
+                  Retro &amp; Nostalji
+                </span>
+              </div>
+            </div>
+
+            {/* Canlı Telemetri Rozeti */}
+            <div className="flex flex-wrap items-center gap-1.5 pt-0.5 text-[11px] font-mono">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface border border-line text-zinc-400">
+                <span className="w-1.5 h-1.5 rounded-full bg-zinc-600" />
+                <span>Lanyard Oto-Algılama</span>
+              </span>
             </div>
           </div>
         )}

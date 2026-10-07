@@ -74,16 +74,16 @@ export const site: SiteData = {
     },
     skills: [
       {
-        title: "Kod & web",
+        title: "Finans & ofis",
+        items: ["MS Excel (Modelleme)", "Word", "PowerPoint", "Finansal Analiz"],
+      },
+      {
+        title: "Kod & web (Hobi)",
         items: ["Lua", "FiveM scripting", "QBCore", "HTML", "CSS", "JavaScript", "Git"],
       },
       {
         title: "Topluluk",
-        items: ["Sunucu yönetimi", "Topluluk yönetimi", "Ekip çalışması"],
-      },
-      {
-        title: "Okul & ofis",
-        items: ["Excel", "Word", "PowerPoint"],
+        items: ["Sunucu yönetimi", "Topluluk operasyonu", "Ekip çalışması"],
       },
     ],
     hobbyTeaser:
