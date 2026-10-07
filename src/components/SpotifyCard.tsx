@@ -55,29 +55,17 @@ export default function SpotifyCard() {
             <span>{spotify ? "ŞU AN ÇALIYOR" : "SPOTIFY"}</span>
           </div>
 
-          {/* Equalizer Çubukları */}
-          <div className="flex items-end gap-1 h-4">
+          {/* Durum Göstergesi */}
+          <span className="flex items-center gap-1.5 text-xs font-mono shrink-0">
             <span
-              className={`w-0.5 bg-[#1DB954] rounded-full ${
-                spotify ? "equalizer-bar" : "h-1 opacity-40"
+              className={`w-1.5 h-1.5 rounded-full ${
+                spotify ? "bg-[#1DB954] animate-pulse" : "bg-zinc-600"
               }`}
             />
-            <span
-              className={`w-0.5 bg-[#1DB954] rounded-full ${
-                spotify ? "equalizer-bar" : "h-1 opacity-40"
-              }`}
-            />
-            <span
-              className={`w-0.5 bg-[#1DB954] rounded-full ${
-                spotify ? "equalizer-bar" : "h-1 opacity-40"
-              }`}
-            />
-            <span
-              className={`w-0.5 bg-[#1DB954] rounded-full ${
-                spotify ? "equalizer-bar" : "h-1 opacity-40"
-              }`}
-            />
-          </div>
+            <span className={spotify ? "text-[#1DB954]" : "text-subtle"}>
+              {loading ? "Bağlanıyor..." : spotify ? "Canlı Dinleme" : "Beklemede"}
+            </span>
+          </span>
         </div>
 
         {/* Albüm Kapağı & Şarkı Bilgisi veya Dinlenme Durumu */}
